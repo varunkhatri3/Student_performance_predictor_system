@@ -90,60 +90,62 @@ study_hours,attendance,previous_score,assignment_marks,result
 
 You can create this manually or generate it with a small Python script.
 
-⚙️ Setup
-1. Clone the repo
-bash
-git clone <your-repo-link>.git
-cd student_performance_project
-2. Install dependencies
-Using requirements.txt:
 
-bash
-pip install -r requirements.txt
-Or install manually:
+## ⚙️ Setup
 
-bash
-pip install numpy pandas scikit-learn matplotlib seaborn
-🚀 How to Run
-Option 1: Jupyter / Colab (Recommended)
-Open notebooks/student_performance_model.ipynb.
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/varunkhatri3/Student_performance_predictor.git
+   cd student_performance_project
+   ```
 
-Run cells in order:
+2. **Install dependencies**
+   
+   Using `requirements.txt`:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+   Or install manually:
+   ```bash
+   pip install numpy pandas scikit-learn matplotlib seaborn
+   ```
 
-Load students_data.csv
+---
 
-Preprocess data
+## 🚀 How to Run
 
-Train model (Logistic Regression for Pass/Fail)
+### Option 1: Jupyter / Colab (Recommended)
+Open `notebooks/student_performance_model.ipynb` and run cells in order:
+1. Load `students_data.csv`
+2. Preprocess data
+3. Train model (Logistic Regression for Pass/Fail)
+4. Evaluate accuracy
+5. Plot graphs (study hours vs marks, attendance vs result)
 
-Evaluate accuracy
-
-Plot graphs (study hours vs marks, attendance vs result)
-
-Option 2: Python scripts
-If you use src/ modules:
-
-bash
+### Option 2: Python scripts
+If you use `src/` modules:
+```bash
 python -m src.model_training
 python -m src.model_evaluation
-🧠 ML Workflow (Simple View)
-Load data from CSV
+```
 
-Clean & preprocess (missing values, encode Pass/Fail → 1/0)
+---
 
-Split into train and test sets
+## 🧠 ML Workflow (Simple View)
 
-Train Logistic Regression (classification)
+1. **Load data** from CSV
+2. **Clean & preprocess** (missing values, encode Pass/Fail → 1/0)
+3. **Split** into train and test sets
+4. **Train** Logistic Regression (classification)
+5. **Test & evaluate** (accuracy score)
+6. **Visualize relationships** (study hours, attendance, etc.)
 
-Test & evaluate (accuracy score)
+---
 
-Visualize relationships (study hours, attendance, etc.)
+## 🔮 Future Enhancements
 
-🔮 Future Enhancements
-Add more features (sleep hours, screen time, etc.)
-
-Try other models (Decision Tree, Random Forest, etc.)
-
-Build a simple GUI using Tkinter
-
-Deploy as a web app using Flask
+- [ ] Add more features (sleep hours, screen time, etc.)
+- [ ] Try other models (Decision Tree, Random Forest, etc.)
+- [ ] Build a simple GUI using Tkinter
+- [ ] Deploy as a web app using Flask
