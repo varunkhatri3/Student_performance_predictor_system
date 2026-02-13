@@ -66,25 +66,27 @@ student_performance_project/
 │
 ├── requirements.txt
 └── README.md
+```
 
-🧾 Dataset
-File: data/students_data.csv
-Example columns:
+## 🧾 Dataset
 
-text
+**File:** `data/students_data.csv`
+
+**Example columns:**
+
+```csv
 study_hours,attendance,previous_score,assignment_marks,result
 5,80,65,70,Pass
 2,60,40,45,Fail
 ...
-study_hours – average study hours
+```
 
-attendance – attendance percentage
-
-previous_score – previous exam marks
-
-assignment_marks – assignment score
-
-result – Pass or Fail (or numeric final score)
+**Column Description:**
+- `study_hours`: Average study hours
+- `attendance`: Attendance percentage
+- `previous_score`: Previous exam marks
+- `assignment_marks`: Assignment score
+- `result`: Pass or Fail (or numeric final score)
 
 You can create this manually or generate it with a small Python script.
 
