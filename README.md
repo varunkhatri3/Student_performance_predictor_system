@@ -1,7 +1,7 @@
 # Student Performance Prediction System 🎓
 ## AI-Based Graduate Internship Project (AI/ML)
 
-**🌐 Live Demo:** [https://student-performance-predictor-system.onrender.com](https://student-performance-predictor-system.onrender.com)
+**🌐 Live Demo:** [https://student-performance-predictor-system.onrender.com](https://student-performance-predictor-system-1.onrender.com)
 
 Welcome to my **Student Performance Prediction System**! This project was developed during my Artificial Intelligence internship to demonstrate an end-to-end Machine Learning pipeline. It predicts whether a student will **Pass** or **Fail** based on key academic metrics.
 
@@ -94,7 +94,7 @@ python app.py
 
 ### 4. Open Live Version
 If you don't want to run it locally, you can access the live version here:  
-**[Launch Web App 🚀](https://student-performance-predictor-system.onrender.com)**
+**[Launch Web App 🚀](https://student-performance-predictor-system-1.onrender.com)**
 
 ---
 
