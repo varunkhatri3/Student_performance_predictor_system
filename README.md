@@ -1,151 +1,86 @@
 # AI-Based Student Performance Prediction System
 
-Beginner-friendly ML project to predict student performance (Pass/Fail or final score) using simple Machine Learning models.
+A professional ML project using an end-to-end pipeline architecture to predict student performance.
 
 ---
 
-## 🌟 Project Summary
-
-This project uses student data (study hours, attendance, exam scores, assignment marks) to:
-
-- Train a Machine Learning model  
-- Predict whether a student will **Pass/Fail**  
-- Visualize how different factors affect performance  
-
-Perfect for interns or students learning AI/ML basics.
-
----
-
-## 🎯 Goals
-
-- Learn basics of AI & Machine Learning  
-- Work with CSV data using Python  
-- Perform data preprocessing  
-- Train and test ML models  
-- Evaluate model performance  
-- Build a clean, presentable ML project
-
----
-
-## 🧰 Tech Stack
-
-- **Language:** Python 3.x  
-
-- **Libraries:**
-  - `numpy`
-  - `pandas`
-  - `scikit-learn`
-  - `matplotlib`
-  - `seaborn` (optional)
-
-- **Tools:**
-  - Jupyter Notebook / Google Colab
-  - Any code editor (VS Code, PyCharm, etc.)
-
----
-
-## 📂 Project Structure (Suggested)
+## 📂 Project Structure
 
 ```text
 student_performance_project/
 │
-├── data/
+├── artifacts/           # Trained models and preprocessor objects
+│   ├── model.pkl
+│   └── preprocessor.pkl
+│
+├── Data/                # Raw dataset
 │   └── students_data.csv
 │
-├── notebooks/
-│   └── student_performance_model.ipynb
-│
 ├── src/
-│   ├── data_preprocessing.py
-│   ├── model_training.py
-│   ├── model_evaluation.py
-│   └── visualization.py
+│   ├── components/      # Pipeline components
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   │
+│   ├── pipeline/        # Orchestration pipelines
+│   │   ├── train_pipeline.py
+│   │   └── predict_pipeline.py
+│   │
+│   ├── logger.py        # Logging system
+│   ├── exception.py     # Custom exception handling
+│   └── utils.py         # Utility functions
 │
-├── models/
-│   └── logistic_regression_model.pkl
-│
+├── templates/           # Flask HTML templates
+├── static/              # CSS/Static files
+├── app.py               # Flask application entry point
 ├── requirements.txt
 └── README.md
 ```
 
-## 🧾 Dataset
+## ⚙️ Setup & Installation
 
-**File:** `data/students_data.csv`
-
-**Example columns:**
-
-```csv
-study_hours,attendance,previous_score,assignment_marks,result
-5,80,65,70,Pass
-2,60,40,45,Fail
-...
-```
-
-**Column Description:**
-- `study_hours`: Average study hours
-- `attendance`: Attendance percentage
-- `previous_score`: Previous exam marks
-- `assignment_marks`: Assignment score
-- `result`: Pass or Fail (or numeric final score)
-
-You can create this manually or generate it with a small Python script.
-
-
-## ⚙️ Setup
-
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/varunkhatri3/Student_performance_predictor.git
-   cd student_performance_project
-   ```
-
-2. **Install dependencies**
-   
-   Using `requirements.txt`:
+1. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
-   
-   Or install manually:
+
+2. **Train the Pipeline**
    ```bash
-   pip install numpy pandas scikit-learn matplotlib seaborn
+   # Generates models and preprocessor in artifacts/
+   python -m src.pipeline.train_pipeline
+   ```
+
+3. **Run the Web App**
+   ```bash
+   # Start the Flask portal
+   python app.py
    ```
 
 ---
 
-## 🚀 How to Run
+## 🚀 AI Pipeline Workflow
 
-### Option 1: Jupyter / Colab (Recommended)
-Open `notebooks/student_performance_model.ipynb` and run cells in order:
-1. Load `students_data.csv`
-2. Preprocess data
-3. Train model (Logistic Regression for Pass/Fail)
-4. Evaluate accuracy
-5. Plot graphs (study hours vs marks, attendance vs result)
-
-### Option 2: Python scripts
-If you use `src/` modules:
-```bash
-python -m src.model_training
-python -m src.model_evaluation
+```mermaid
+graph TD
+    A[📂 Raw Data] -->|Ingest| B(⚙️ Data Ingestion)
+    B -->|Split| C(🛠️ Data Transformation)
+    C -->|Train| D{🎓 Model Trainer}
+    D -->|Evaluate & Save| E[💾 Best Model & Preprocessor]
+    
+    E --> F[🌐 Flask Web Application]
+    F -->|Inference| G[📊 Prediction Result]
 ```
 
----
-
-## 🧠 ML Workflow (Simple View)
-
-1. **Load data** from CSV
-2. **Clean & preprocess** (missing values, encode Pass/Fail → 1/0)
-3. **Split** into train and test sets
-4. **Train** Logistic Regression (classification)
-5. **Test & evaluate** (accuracy score)
-6. **Visualize relationships** (study hours, attendance, etc.)
+### Pipeline Components:
+1.  **Data Ingestion**: Reads raw CSV data, creates artifacts folder, and performs train-test split.
+2.  **Data Transformation**: Handles missing values and scales features using a professional `ColumnTransformer` and `Pipeline`.
+3.  **Model Trainer**: Automatically trains multiple models (Random Forest, Logistic Regression, etc.) and picks the best-performing one.
+4.  **Prediction Pipeline**: A standalone module that takes user input, applies the trained transformations, and returns a prediction.
 
 ---
 
-## 🔮 Future Enhancements
-
-- [ ] Add more features (sleep hours, screen time, etc.)
-- [ ] Try other models (Decision Tree, Random Forest, etc.)
-- [ ] Build a simple GUI using Tkinter
-- [ ] Deploy as a web app using Flask
+## 🛠️ Features
+- **Standardized Logging**: Every step of the pipeline is logged for debugging.
+- **Custom Error Handling**: Detailed error messages including file names and line numbers.
+- **Automated Preprocessing**: Uses robust sklearn pipelines for numerical scaling.
+- **Model Selection**: Automatically selects the best machine learning model based on accuracy.
