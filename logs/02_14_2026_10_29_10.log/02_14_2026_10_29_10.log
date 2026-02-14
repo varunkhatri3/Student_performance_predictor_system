@@ -16,3 +16,6 @@
 [ 2026-02-14 10:38:16,890 ] 97 werkzeug - INFO - 127.0.0.1 - - [14/Feb/2026 10:38:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 [ 2026-02-14 10:50:37,085 ] 97 werkzeug - INFO - 127.0.0.1 - - [14/Feb/2026 10:50:37] "GET / HTTP/1.1" 200 -
 [ 2026-02-14 10:50:37,342 ] 97 werkzeug - INFO - 127.0.0.1 - - [14/Feb/2026 10:50:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[ 2026-02-14 11:47:37,888 ] 97 werkzeug - INFO -  * Detected change in 'D:\\ml project\\student_performance_project\\src\\components\\model_trainer.py', reloading
+[ 2026-02-14 11:47:38,379 ] 97 werkzeug - INFO -  * Detected change in 'D:\\ml project\\student_performance_project\\src\\components\\model_trainer.py', reloading
+[ 2026-02-14 11:47:38,380 ] 97 werkzeug - INFO -  * Detected change in 'D:\\ml project\\student_performance_project\\src\\components\\model_trainer.py', reloading

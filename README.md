@@ -1,86 +1,144 @@
-# AI-Based Student Performance Prediction System
+# Student Performance Prediction System
+## AI/ML Internship Project
 
-A professional ML project using an end-to-end pipeline architecture to predict student performance.
+### About This Project
+This is my first AI/ML project! It predicts whether a student will pass or fail based on their study habits and performance. I built this during my internship to learn about Machine Learning.
 
 ---
 
-## 📂 Project Structure
+## What Does It Do?
 
-```text
+The system takes 4 inputs about a student:
+- Study hours per day
+- Attendance percentage
+- Previous exam score
+- Assignment marks
+
+Then it predicts: **Will Pass** or **Will Fail**
+
+---
+
+## Technologies I Used
+
+- **Python** - Programming language
+- **Pandas** - For working with data
+- **Scikit-learn** - Machine learning library
+- **Flask** - For the web application
+
+---
+
+## Project Structure
+
+```
 student_performance_project/
 │
-├── artifacts/           # Trained models and preprocessor objects
-│   ├── model.pkl
-│   └── preprocessor.pkl
-│
-├── Data/                # Raw dataset
+├── data/                   # The dataset
 │   └── students_data.csv
 │
-├── src/
-│   ├── components/      # Pipeline components
-│   │   ├── data_ingestion.py
-│   │   ├── data_transformation.py
-│   │   └── model_trainer.py
-│   │
-│   ├── pipeline/        # Orchestration pipelines
-│   │   ├── train_pipeline.py
-│   │   └── predict_pipeline.py
-│   │
-│   ├── logger.py        # Logging system
-│   ├── exception.py     # Custom exception handling
-│   └── utils.py         # Utility functions
+├── src/                    # My code files
+│   ├── components/         # Different parts of the pipeline
+│   ├── pipeline/           # Training and prediction code
+│   ├── logger.py          # Logging
+│   └── utils.py           # Helper functions
 │
-├── templates/           # Flask HTML templates
-├── static/              # CSS/Static files
-├── app.py               # Flask application entry point
-├── requirements.txt
-└── README.md
+├── artifacts/             # Saved models
+│   ├── model.pkl          # Trained model
+│   └── preprocessor.pkl   # Data processing
+│
+├── templates/             # HTML files for web app
+├── static/                # CSS files
+│
+├── app.py                 # Web application
+└── README.md              # This file!
 ```
-
-## ⚙️ Setup & Installation
-
-1. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Train the Pipeline**
-   ```bash
-   # Generates models and preprocessor in artifacts/
-   python -m src.pipeline.train_pipeline
-   ```
-
-3. **Run the Web App**
-   ```bash
-   # Start the Flask portal
-   python app.py
-   ```
 
 ---
 
-## 🚀 AI Pipeline Workflow
+## How to Run This Project
 
-```mermaid
-graph TD
-    A[📂 Raw Data] -->|Ingest| B(⚙️ Data Ingestion)
-    B -->|Split| C(🛠️ Data Transformation)
-    C -->|Train| D{🎓 Model Trainer}
-    D -->|Evaluate & Save| E[💾 Best Model & Preprocessor]
-    
-    E --> F[🌐 Flask Web Application]
-    F -->|Inference| G[📊 Prediction Result]
+### Step 1: Install Required Libraries
+```bash
+pip install -r requirements.txt
 ```
 
-### Pipeline Components:
-1.  **Data Ingestion**: Reads raw CSV data, creates artifacts folder, and performs train-test split.
-2.  **Data Transformation**: Handles missing values and scales features using a professional `ColumnTransformer` and `Pipeline`.
-3.  **Model Trainer**: Automatically trains multiple models (Random Forest, Logistic Regression, etc.) and picks the best-performing one.
-4.  **Prediction Pipeline**: A standalone module that takes user input, applies the trained transformations, and returns a prediction.
+### Step 2: Train the Model
+```bash
+python -m src.pipeline.train_pipeline
+```
+
+### Step 3: Run the Application
+```bash
+python app.py
+```
+Then open your browser and go to: `http://localhost:5000`
 
 ---
 
-## 🛠️ Features
-- **Standardized Logging**: Every step of the pipeline is logged for debugging.
-- **Custom Error Handling**: Detailed error messages including file names and line numbers.
-- **Automated Preprocessing**: Uses robust sklearn pipelines for numerical scaling.
-- **Model Selection**: Automatically selects the best machine learning model based on accuracy.
+## The Dataset
+
+My dataset contains information about 1,100 students with these features:
+
+| Feature | What It Means |
+|---------|--------------|
+| study_hours | How many hours they study per day |
+| attendance | Their attendance percentage |
+| previous_score | Score from previous exam |
+| assignment_marks | Marks in assignments |
+| result | Pass or Fail (what we predict) |
+
+---
+
+## How It Works
+
+1. **Data Collection**: I used a dataset with student information
+2. **Data Preprocessing**: Clean the data and prepare it for training
+3. **Model Training**: Train different ML models and pick the best one
+4. **Prediction**: Use the trained model to predict new students
+
+The system automatically picks the best performing model (Random Forest)!
+
+---
+
+## What I Learned
+
+✅ How to build a complete ML pipeline  
+✅ Data preprocessing and feature scaling  
+✅ Training and comparing multiple ML models  
+✅ Creating a web application with Flask  
+
+---
+
+## Results
+
+The model works great! It achieved an **accuracy of ~90%**. You can see detailed results in the logs folder.
+
+---
+
+## Screenshots
+
+**Web Application:**
+![Web App](link-to-screenshot-if-any)
+
+---
+
+## About Me
+
+This project was created as part of my AI/ML internship program. It's my first machine learning project and I learned a lot while building it!
+
+**Program**: Artificial Intelligence Internship  
+**Organization**: SKILL ORBIT  
+
+---
+
+## Troubleshooting
+
+**Problem**: Model files not found  
+**Solution**: Run the training pipeline first: `python -m src.pipeline.train_pipeline`
+
+**Problem**: Web app not starting  
+**Solution**: Make sure Flask is installed: `pip install flask`
+
+---
+
+## Thanks!
+Thank you for checking out my first ML project! I hope it helps other beginners learning AI/ML.

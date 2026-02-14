@@ -1,0 +1,19 @@
+# Standard Python ignores
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Project specific ignores
+logs/
+artifacts/*.pkl
+.ipynb_checkpoints/
+*.html_test
+test_result_display.html
+app_test.py
+app_debug.py
+
+# Environments
+.venv/
+env/
+venv/
+ENV/

@@ -1,2 +1,3 @@
 [ 2026-02-14 10:36:59,218 ] 97 werkzeug - WARNING -  * Debugger is active!
 [ 2026-02-14 10:36:59,220 ] 97 werkzeug - INFO -  * Debugger PIN: 446-593-429
+[ 2026-02-14 11:47:37,899 ] 97 werkzeug - INFO -  * Detected change in 'D:\\ml project\\student_performance_project\\src\\components\\model_trainer.py', reloading
