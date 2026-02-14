@@ -13,7 +13,6 @@ student_performance_project/
 │
 ├── notebooks/              # Interactive Notebooks
 │   ├── Student_Performance_System.ipynb  # Main ML Pipeline
-│   └── Web_App_Launcher.ipynb            # Launch Web App from Jupyter
 │
 ├── app.py                  # Standalone Web Application
 ├── data/                   # Dataset (1,100 records)
