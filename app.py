@@ -96,7 +96,8 @@ if __name__ == "__main__":
     print("\n" + "="*60)
     print("🚀 FLASK WEB APP STARTING (Standard Edition)")
     print("="*60)
-    print("📍 URL: http://localhost:5000")
+    print("📍 Local: http://localhost:5000")
+    print("📍 Live:  https://student-performance-predictor-system.onrender.com")
     print("="*60 + "\n")
     
     app.run(host='0.0.0.0', port=5000, debug=True)
